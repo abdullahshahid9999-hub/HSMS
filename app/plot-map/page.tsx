@@ -41,7 +41,7 @@ export default function PlotMapPage() {
             <div className="flex gap-3">
               <select 
                 value={selectedBlockId} 
-                onChange={(e) => setSelectedBlockId(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedBlockId(e.target.value)}
                 className="h-9 border border-ds-outline-variant rounded px-3 text-[13px] bg-white focus:outline-none focus:border-ds-secondary cursor-pointer"
               >
                 <option value="all">All Blocks</option>

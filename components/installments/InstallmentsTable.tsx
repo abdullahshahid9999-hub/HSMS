@@ -23,7 +23,7 @@ export default function InstallmentsTable() {
   const [selectedInst, setSelectedInst] = useState<Installment | null>(null)
   const [selectedBuyer, setSelectedBuyer] = useState<Buyer | null>(null)
 
-  const filteredInstallments = installments.filter(inst => inst.status === activeTab)
+  const filteredInstallments = installments.filter((inst: Installment) => inst.status === activeTab)
 
   const handleSendReminderClick = (inst: Installment) => {
     const buyer = BUYERS.find(b => b.id === inst.buyerId) || null
@@ -34,7 +34,7 @@ export default function InstallmentsTable() {
 
   const handleConfirmReminder = () => {
     if (selectedInst) {
-      setInstallments(prev => prev.map(inst => 
+      setInstallments((prev: Installment[]) => prev.map((inst: Installment) => 
         inst.id === selectedInst.id ? { ...inst, reminderSent: true } : inst
       ))
     }
@@ -96,7 +96,7 @@ export default function InstallmentsTable() {
               </tr>
             </thead>
             <tbody className="bg-ds-surface text-ds-on-surface">
-              {filteredInstallments.map((inst) => {
+              {filteredInstallments.map((inst: Installment) => {
                 const buyer = BUYERS.find(b => b.id === inst.buyerId)!
                 const isOverdue = inst.status === 'overdue'
 

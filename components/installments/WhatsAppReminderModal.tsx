@@ -30,7 +30,7 @@ export default function WhatsAppReminderModal({
   const formattedDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(installment.dueDate))
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
+    <Dialog open={isOpen} onOpenChange={(open: boolean) => !open && onClose()}>
       <DialogContent className="w-[480px] bg-ds-surface p-0 border-none shadow-modal gap-0 overflow-hidden sm:max-w-[480px]">
         <DialogHeader className="p-5 border-b border-[#E2E8F0]">
           <DialogTitle className="flex items-center gap-2 text-[16px] font-semibold text-ds-on-surface">

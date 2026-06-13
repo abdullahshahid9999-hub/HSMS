@@ -6,15 +6,15 @@ import PlotCell from './PlotCell'
 interface PlotGridProps {
   block: Block
   selectedPlotId: string | null
-  onPlotSelect: (plot: Plot) => void
+  onPlotSelect: (plot: Plot | null) => void
 }
 
 export default function PlotGrid({ block, selectedPlotId, onPlotSelect }: PlotGridProps) {
   const plots = React.useMemo(() => generatePlots(block), [block])
   
-  const availableCount = plots.filter(p => p.status === 'available').length
-  const bookedCount = plots.filter(p => p.status === 'booked').length
-  const soldCount = plots.filter(p => p.status === 'sold').length
+  const availableCount = plots.filter((p: Plot) => p.status === 'available').length
+  const bookedCount = plots.filter((p: Plot) => p.status === 'booked').length
+  const soldCount = plots.filter((p: Plot) => p.status === 'sold').length
 
   const gridColsClass = 
     block.id === 'general' ? 'grid-cols-10' :
@@ -42,7 +42,7 @@ export default function PlotGrid({ block, selectedPlotId, onPlotSelect }: PlotGr
 
       {/* Grid */}
       <div className={`grid ${gridColsClass} gap-1.5`}>
-        {plots.map((plot) => (
+        {plots.map((plot: Plot) => (
           <PlotCell
             key={plot.id}
             plot={plot}

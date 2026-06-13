@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils'
 interface PlotCellProps {
   plot: Plot
   isSelected: boolean
-  onClick: (plot: Plot) => void
+  onClick: (plot: Plot | null) => void
 }
 
 export default function PlotCell({ plot, isSelected, onClick }: PlotCellProps) {

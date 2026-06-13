@@ -1,4 +1,4 @@
-import { Plot, Block, PlotStatus, Buyer } from './types'
+import { Plot, Block, PlotStatus, Buyer, Installment } from './types'
 
 export const SCHEME = {
   name: 'Lyallpur Smart City',
@@ -39,7 +39,7 @@ export const BUYERS: Buyer[] = [
   { id: 'B012', name: 'Tariq Mahmood',        cnic: '33100-2233445-2', phone: '+92 321 2233445', city: 'Faisalabad', type: 'local' },
 ]
 
-export const INSTALLMENTS = [
+export const INSTALLMENTS: Installment[] = [
   { id: 'INS001', buyerId: 'B001', plotRef: 'OVS-012', block: 'Overseas Block', plotType: '10-Marla', totalAmount: 8500000, downPayment: 2125000, monthlyAmount: 175694, dueDate: '2024-05-10', paidDate: null, status: 'overdue', reminderSent: false, installmentNo: 4, totalInstallments: 36 },
   { id: 'INS002', buyerId: 'B002', plotRef: 'GEN-034', block: 'General Block', plotType: '5-Marla', totalAmount: 4250000, downPayment: 1062500, monthlyAmount: 87847, dueDate: '2024-05-28', paidDate: null, status: 'overdue', reminderSent: true, installmentNo: 2, totalInstallments: 36 },
   { id: 'INS003', buyerId: 'B003', plotRef: 'OVS-007', block: 'Overseas Block', plotType: '10-Marla', totalAmount: 8500000, downPayment: 2125000, monthlyAmount: 175694, dueDate: '2024-05-15', paidDate: null, status: 'overdue', reminderSent: false, installmentNo: 3, totalInstallments: 36 },
