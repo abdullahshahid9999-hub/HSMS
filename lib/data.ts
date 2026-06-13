@@ -1,4 +1,4 @@
-import { Plot, Block, PlotStatus } from './types'
+import { Plot, Block, PlotStatus, Buyer } from './types'
 
 export const SCHEME = {
   name: 'Lyallpur Smart City',
@@ -24,7 +24,7 @@ export const BLOCKS: Block[] = [
   { id: 'commercial', name: 'Commercial Block', description: 'Commercial plots for businesses and investment', totalPlots: 24, plotType: '4-Marla-C' },
 ]
 
-export const BUYERS = [
+export const BUYERS: Buyer[] = [
   { id: 'B001', name: 'Ahmed Raza Khan',     cnic: '33100-1234567-1', phone: '+92 300 1234567', city: 'Faisalabad', type: 'local' },
   { id: 'B002', name: 'Fatima Malik',         cnic: '33100-2345678-2', phone: '+92 321 2345678', city: 'Faisalabad', type: 'local' },
   { id: 'B003', name: 'Muhammad Usman Tariq', cnic: '33100-3456789-3', phone: '+92 311 3456789', city: 'Dubai, UAE',  type: 'overseas' },
